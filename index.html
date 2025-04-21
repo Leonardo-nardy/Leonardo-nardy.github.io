@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Trilhas em Santiago - Cabo Verde</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+    <style>
+
+
+
+/* footer seja destacado momentaneamente ao rolar depois de ser clicado no Contatos no Menu */        
+#footer:target {
+    animation: highlight 2s;
+}
+@keyframes highlight {
+    0% { background-color: rgba(233, 30, 99, 0.1); }
+    100% { background-color: transparent; }
+}        
+/* footer seja destacado momentaneamente ao rolar depois de ser clicado no Contatos no Menu */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 12px;
+  width: 70%;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #333;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  font-size: 22px;
+  color: #1a1a1a;
+  text-align: center;
+}
+
+.modal-content .close {
+  color: #aaa;
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-content .close:hover {
+  color: #000;
+}
+
+.modal-content h2 {
+  font-size: 12px; /* ou outro tamanho que preferir, ex: 16px, 20px */
+  margin-bottom: 15px;
+}
+
+
+
+        footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 0; /* Diminui o espaçamento vertical */
+    text-align: center;
+    font-size: 60%; /* Aumentado para 60% do tamanho original */
+}
+
+footer .container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+footer h2 {
+    font-size: 14px; /* Ajustado para 60% do tamanho original */
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #fff;
+}
+
+footer p {
+    font-size: 9px; /* Ajustado para 60% do tamanho original */
+    color: #bbb;
+    margin: 5px 0;
+}
+
+footer a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+footer .social-icons i {
+    font-size: 12px; /* Ajustado para 60% do tamanho original */
+    color: #bbb;
+    margin: 0 5px;
+    transition: color 0.3s;
+}
+
+footer .social-icons i:hover {
+    color: #1dbf73;
+}
+
+footer .links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px; /* Diminui o espaçamento entre os links */
+    margin: 10px 0;
+}
+
+footer .links a {
+    font-size: 8px; /* Ajustado para 60% do tamanho original */
+    padding: 2px 5px;
+    display: block;
+}
+
+footer .policy {
+    margin-top: 10px;
+    font-size: 8px; /* Ajustado para 60% do tamanho original */
+}
+
+footer .policy a {
+    font-size: 8px; /* Ajustado para 60% do tamanho original */
+    color: #bbb;
+    margin: 0 5px;
+    text-decoration: none;
+}
+
+footer .policy a:hover {
+    color: #fff;
+}
+
+footer .rights {
+    margin-top: 10px;
+    font-size: 8px; /* Ajustado para 60% do tamanho original */
+    color: #bbb;
+}
+
+footer .rights span {
+    color: #fff;
+}
+
+footer p a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+}
+
+footer p a i {
+    margin-left: 5px;
+    font-size: 18px;
+}
+
+footer p a:hover {
+    color: #25D366; /* Cor do ícone de WhatsApp */
+}
+
+footer p a i.fab.fa-whatsapp {
+    color: #25D366; /* Cor do ícone de WhatsApp */
+}
+
+footer p {
+    font-size: 9px;
+    color: #bbb;
+    margin: 5px 0;
+}
+
+footer p a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+}
+
+footer p a i {
+    margin-left: 5px;
+    font-size: 18px;
+}
+
+footer p i {
+    font-size: 18px; /* Garante que os ícones e o texto tenham o mesmo tamanho */
+}
+
+
+footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 60%; /* Reduzido para 50% do tamanho original */
+}
+
+footer .container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+footer h2 {
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #fff;
+}
+
+footer p {
+    font-size: 9px; /* Tamanho ajustado para ficar igual aos outros elementos */
+    color: #bbb;
+    margin: 5px 0;
+}
+
+footer p a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 9px; /* Tamanho ajustado para o email, igual ao do texto */
+    display: inline-flex;
+    align-items: center;
+}
+
+footer p a i {
+    margin-left: 5px;
+    font-size: 18px;
+}
+
+footer .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+footer .social-icons a {
+    color: #bbb;
+    font-size: 18px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer .social-icons a:hover {
+    color: #1dbf73;
+}
+
+footer .rights {
+    margin-top: 10px;
+    font-size: 8px;
+    color: #bbb;
+}
+
+footer .rights span {
+    color: #fff;
+}
+
+footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 60%; /* Tamanho reduzido do texto */
+}
+
+footer .container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+footer h2 {
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #fff;
+}
+
+footer p {
+    font-size: 9px; /* Tamanho ajustado para todo o conteúdo do footer */
+    color: #bbb;
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer p a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 9px;
+    display: inline-flex;
+    align-items: center;
+}
+
+footer p a i {
+    margin-left: 5px;
+    font-size: 18px; /* Tamanho dos ícones */
+}
+
+footer p i {
+    font-size: 14px; /* Tamanho adequado dos ícones, mais proporcional */
+    margin-right: 5px;
+}
+
+footer .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+footer .social-icons a {
+    color: #bbb;
+    font-size: 18px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer .social-icons a:hover {
+    color: #1dbf73;
+}
+
+footer .rights {
+    margin-top: 10px;
+    font-size: 8px;
+    color: #bbb;
+}
+
+footer .rights span {
+    color: #fff;
+}
+
+footer p a i.fab.fa-whatsapp {
+    font-size: 24px; /* Ajusta o tamanho do ícone do WhatsApp */
+}
+
+footer p {
+    font-size: 9px; /* Tamanho do texto */
+    color: #bbb;
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer p a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 9px;
+    display: inline-flex;
+    align-items: center;
+}
+
+footer p a i {
+    margin-left: 5px;
+    font-size: 14px; /* Tamanho dos ícones */
+}
+
+footer p i {
+    font-size: 14px; /* Tamanho do ícone de telefone */
+    margin-right: 5px;
+}
+
+/* Ajustando o espaçamento entre os ícones e números */
+footer p a i.fab.fa-whatsapp {
+    margin-left: 10px; /* Distância entre o ícone do WhatsApp e o número de telefone */
+}
+
+
+    /* RESET E CONFIGURAÇÕES GERAIS */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Arial', sans-serif;
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    body {
+        background-color: #f5f5f5;
+        padding: 10px 0;
+        touch-action: pan-y;
+    }
+    
+    .container {
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+        padding: 0 15px;
+        max-width: 700px;
+    }
+
+    /* TÍTULO DA SEÇÃO */
+    .section-title {
+        text-align: center;
+        margin-bottom: 3px; /* Reduzido para 3px */
+        margin-top: 20px; /* Adicionada a margem superior */
+        color: #2c3e50;
+        font-size: 1.2rem; /* Ajuste para maior semelhança com título de serviço */
+        font-weight: 600; /* Ajuste para maior semelhança com título de serviço */
+        padding: 0 10px;
+        font-family: 'Helvetica', sans-serif; /* Ajustado para fonte mais neutra, similar a serviço */
+    }
+
+    .tours-wrapper {
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .tours-container {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .tours-scroll {
+        display: flex;
+        overflow-x: auto;
+        gap: 10px;
+        padding: 10px 5px;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .tours-scroll::-webkit-scrollbar {
+        display: none;
+    }
+
+    .tour-card {
+        background-color: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 8px 4px; /* Reduzido o padding */
+        min-width: 60%; /* Reduzido a largura do cartão */
+        flex: 0 0 auto;
+        text-align: center;
+        transition: transform 0.2s;
+    }
+
+    .tour-title {
+        font-size: 0.9rem; /* Diminuído o tamanho da fonte */
+        font-weight: 700;
+        color: #2c3e50;
+        margin-bottom: 8px; /* Diminuído o espaço inferior */
+        line-height: 1.3;
+    }
+
+    .tour-highlights {
+        display: flex;
+        flex-direction: column;
+        gap: 5px; /* Reduzido o espaço entre os itens */
+        margin-bottom: 8px; /* Diminuído o espaço inferior */
+    }
+
+    .highlight-item {
+        display: flex;
+        align-items: center;
+        font-size: 0.75rem; /* Reduzido o tamanho da fonte */
+        color: #34495e;
+        text-align: left;
+    }
+
+    .highlight-item i {
+        margin-right: 6px;
+        color: #e74c3c;
+        min-width: 18px;
+        font-size: 0.8rem; /* Ajustado o tamanho do ícone */
+    }
+
+    .buttons-container {
+        display: flex;
+        flex-direction: column;
+        gap: 6px; /* Reduzido o espaço entre os botões */
+        margin-top: 8px; /* Diminuído o espaço superior */
+    }
+
+    .info-button, .book-button {
+        border: none;
+        padding: 7px;
+        border-radius: 20px;
+        font-size: 0.8rem; /* Reduzido o tamanho da fonte */
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+        width: 100%;
+    }
+
+    .info-button {
+        background-color: #3498db;
+        color: white;
+    }
+
+    .info-button:hover, .info-button:active {
+        background-color: #2980b9;
+    }
+
+    .book-button {
+        background-color: #e74c3c;
+        color: white;
+    }
+
+    .book-button:hover, .book-button:active {
+        background-color: #c0392b;
+    }
+
+    .scroll-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 30px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+        z-index: 10;
+        border: none;
+        font-size: 1rem;
+        color: #e74c3c;
+        opacity: 0.9;
+    }
+
+    .scroll-arrow.left {
+        left: 5px;
+    }
+
+    .scroll-arrow.right {
+        right: 5px;
+    }
+
+    .scroll-arrow:active {
+        transform: translateY(-50%) scale(0.95);
+    }
+
+    @media (min-width: 768px) {
+        .container {
+            max-width: 600px;
+        }
+        
+        .tour-card {
+            min-width: calc(50% - 15px); /* Cartões mais estreitos */
+        }
+
+        .scroll-arrow {
+            width: 35px;
+            height: 35px;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .container {
+            max-width: 700px;
+        }
+        
+        .tour-card {
+            min-width: calc(33.333% - 20px); /* Cartões mais estreitos */
+        }
+    }
+</style>
+
+
+
+</head>
+<body>
+
+<div style="text-align: center; margin-top: -10px; margin-bottom: -5px;">
+    <h1 style="font-family: 'Allura', cursive; font-size: 2.3rem; color: #2c3e50; margin: 0;">
+        Kreol Expeditions
+    </h1>
+</div>
+
+<!-- MenuBaxoLogo -->
+<div style="text-align: center; margin: 10px 0 25px 0;">
+    <nav>
+        <a href="#" style="color: #2c3e50; text-decoration: none; margin: 0 15px; font-size: 0.9rem; font-weight: 600;">Home</a>
+        <a href="#" id="openBlogModal" style="color: #2c3e50; text-decoration: none; margin: 0 15px; font-size: 0.9rem; font-weight: 600;">Blog</a>
+        <a href="#footer" id="contato-link" style="color: #2c3e50; text-decoration: none; margin: 0 15px; font-size: 0.9rem; font-weight: 600;">Contato</a>
+    </nav>
+</div>
+
+<!-- Nova seção: Aventuras & Natureza -->
+<div class="container">
+        <h1 class="section-title">Aventuras & Natureza</h1>
+        
+        <div class="tours-wrapper">
+            <div class="tours-container">
+                <button class="scroll-arrow left" onclick="scrollTours(-1, 'tours-scroll-3')" aria-label="Voltar">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <div class="tours-scroll" id="tours-scroll-3">
+                    <div class="tour-card">
+                        <h2 class="tour-title">Trilha na Serra Malagueta</h2>
+                        <div class="tour-highlights">
+                            <div class="highlight-item"><i class="fas fa-hiking"></i> Dificuldade: Moderada</div>
+                            <div class="highlight-item"><i class="far fa-clock"></i> Duração: 2–4 horas</div>
+                            <div class="highlight-item"><i class="fas fa-leaf"></i> Vegetação endémica</div>
+                            <div class="highlight-item"><i class="fas fa-map-marker-alt"></i> Partida: Assomada</div>
+                        </div>
+                        <div class="buttons-container">
+                            <button class="info-button">Ver Fotos</button>
+                            <button class="book-button">Reservar</button>
+                        </div>
+                    </div>
+
+                    <div class="tour-card">
+                        <h2 class="tour-title">Caminhada Monte Tchota</h2>
+                        <div class="tour-highlights">
+                            <div class="highlight-item"><i class="fas fa-hiking"></i> Dificuldade: Moderada</div>
+                            <div class="highlight-item"><i class="far fa-clock"></i> Duração: 3 horas</div>
+                            <div class="highlight-item"><i class="fas fa-mountain"></i> Paisagens montanhosas e vilas rurais</div>
+                            <div class="highlight-item"><i class="fas fa-map-marker-alt"></i> Partida: Rui Vaz</div>
+                        </div>
+                        <div class="buttons-container">
+                            <button class="info-button">Ver Fotos</button>
+                            <button class="book-button">Reservar</button>
+                        </div>
+                    </div>
+
+                    <div class="tour-card">
+                        <h2 class="tour-title">Passeio Ecológico em Ribeira da Barca</h2>
+                        <div class="tour-highlights">
+                            <div class="highlight-item"><i class="fas fa-hiking"></i> Dificuldade: Fácil</div>
+                            <div class="highlight-item"><i class="far fa-clock"></i> Duração: 2 horas</div>
+                            <div class="highlight-item"><i class="fas fa-water"></i> Grutas, rios e paisagem costeira</div>
+                            <div class="highlight-item"><i class="fas fa-map-marker-alt"></i> Partida: Ribeira da Barca</div>
+                        </div>
+                        <div class="buttons-container">
+                            <button class="info-button">Ver Fotos</button>
+                            <button class="book-button">Reservar</button>
+                        </div>
+                    </div>
+
+                    <div class="tour-card">
+                        <h2 class="tour-title">Observação de Aves (Birdwatching)</h2>
+                        <div class="tour-highlights">
+                            <div class="highlight-item"><i class="fas fa-hiking"></i> Dificuldade: Fácil</div>
+                            <div class="highlight-item"><i class="far fa-clock"></i> Duração: 2–3 horas</div>
+                            <div class="highlight-item"><i class="fas fa-binoculars"></i> Espécies endêmicas e migratórias</div>
+                            <div class="highlight-item"><i class="fas fa-map-marker-alt"></i> Partida: Serra Malagueta</div>
+                        </div>
+                        <div class="buttons-container">
+                            <button class="info-button">Ver Fotos</button>
+                            <button class="book-button">Reservar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="scroll-arrow right" onclick="scrollTours(1, 'tours-scroll-3')" aria-label="Avançar">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+</div>
+
+
+
+<!-- Nova Seção: Vida Local e Comunidade -->
+<div class="container">
+    <h1 class="section-title">Vida Local e Comunidade</h1>
+    
+    <div class="tours-wrapper">
+        <div class="tours-container">
+            <button class="scroll-arrow left" onclick="scrollTours(-1, 'tours-scroll-5')" aria-label="Voltar">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <div class="tours-scroll" id="tours-scroll-5">
+                <!-- Card 1: Vivência Agrícola (Turismo Rural) -->
+                <div class="tour-card">
+                    <h2 class="tour-title">Vivência Agrícola (Turismo Rural)</h2>
+                    <div class="tour-highlights">
+                        <div class="highlight-item"><i class="fas fa-hiking"></i> Dificuldade: Moderada</div>
+                        <div class="highlight-item"><i class="far fa-clock"></i> Duração: 3–4 horas</div>
+                        <div class="highlight-item"><i class="fas fa-seedling"></i> Plantio, colheita, preparação de refeições</div>
+                        <div class="highlight-item"><i class="fas fa-map-marker-alt"></i> Partida: Zona rural de Santiago</div>
+                    </div>
+                    <div class="buttons-container">
+                        <button class="info-button">Ver Fotos</button>
+                        <button class="book-button">Reservar</button>
+                    </div>
+                </div>
+
+                <!-- Card 2: Volunturismo & Projetos Sociais -->
+                <div class="tour-card">
+                    <h2 class="tour-title">Volunturismo & Projetos Sociais</h2>
+                    <div class="tour-highlights">
+                        <div class="highlight-item"><i class="fas fa-hiking"></i> Dificuldade: Fácil</div>
+                        <div class="highlight-item"><i class="far fa-clock"></i> Duração: 1 dia (personalizável)</div>
+                        <div class="highlight-item"><i class="fas fa-hands-helping"></i> Atividades com ONGs, escolas e comunidades</div>
+                        <div class="highlight-item"><i class="fas fa-map-marker-alt"></i> Partida: Vários locais na ilha</div>
+                    </div>
+                    <div class="buttons-container">
+                        <button class="info-button">Ver Fotos</button>
+                        <button class="book-button">Reservar</button>
+                    </div>
+                </div>
+
+                <!-- Card 3: Artesanato com Comunidades Locais -->
+                <div class="tour-card">
+                    <h2 class="tour-title">Artesanato com Comunidades Locais</h2>
+                    <div class="tour-highlights">
+                        <div class="highlight-item"><i class="fas fa-hiking"></i> Dificuldade: Fácil</div>
+                        <div class="highlight-item"><i class="far fa-clock"></i> Duração: 2 horas</div>
+                        <div class="highlight-item"><i class="fas fa-palette"></i> Trabalhos em tecido, palha, cerâmica</div>
+                        <div class="highlight-item"><i class="fas fa-map-marker-alt"></i> Partida: Assomada ou interior</div>
+                    </div>
+                    <div class="buttons-container">
+                        <button class="info-button">Ver Fotos</button>
+                        <button class="book-button">Reservar</button>
+                    </div>
+                </div>
+            </div>
+
+            <button class="scroll-arrow right" onclick="scrollTours(1, 'tours-scroll-5')" aria-label="Avançar">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<!-- Nova seção: Gastronomia & Sabores -->
+<div class="container">
+    <h1 class="section-title">Gastronomia & Sabores</h1>
+    
+    <div class="tours-wrapper">
+        <div class="tours-container">
+            <button class="scroll-arrow left" onclick="scrollTours(-1, 'tours-scroll-6')" aria-label="Voltar">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <div class="tours-scroll" id="tours-scroll-6">
+                <!-- Tour Gastronômico em Mercados Locais -->
+                <div class="tour-card">
+                    <h2 class="tour-title">Tour Gastronômico em Mercados Locais</h2>
+                    <div class="tour-highlights">
+                        <div class="highlight-item"><i class="fas fa-hiking"></i> Dificuldade: Fácil</div>
+                        <div class="highlight-item"><i class="far fa-clock"></i> Duração: 2 horas</div>
+                        <div class="highlight-item"><i class="fas fa-utensils"></i> Degustação de frutas, doces, refeições típicas</div>
+                        <div class="highlight-item"><i class="fas fa-map-marker-alt"></i> Partida: Assomada ou Praia</div>
+                    </div>
+                    <div class="buttons-container">
+                        <button class="info-button">Ver Fotos</button>
+                        <button class="book-button">Reservar</button>
+                    </div>
+                </div>
+
+                <!-- Degustação de Grogue e Ponche -->
+                <div class="tour-card">
+                    <h2 class="tour-title">Degustação de Grogue e Ponche</h2>
+                    <div class="tour-highlights">
+                        <div class="highlight-item"><i class="fas fa-hiking"></i> Dificuldade: Fácil</div>
+                        <div class="highlight-item"><i class="far fa-clock"></i> Duração: 1h30</div>
+                        <div class="highlight-item"><i class="fas fa-wine-glass-alt"></i> Visita a destilaria + prova de bebidas</div>
+                        <div class="highlight-item"><i class="fas fa-map-marker-alt"></i> Partida: Santa Catarina ou Ribeira Grande</div>
+                    </div>
+                    <div class="buttons-container">
+                        <button class="info-button">Ver Fotos</button>
+                        <button class="book-button">Reservar</button>
+                    </div>
+                </div>
+
+                <!-- Almoço Típico com Família Local -->
+                <div class="tour-card">
+                    <h2 class="tour-title">Almoço Típico com Família Local</h2>
+                    <div class="tour-highlights">
+                        <div class="highlight-item"><i class="fas fa-hiking"></i> Dificuldade: Fácil</div>
+                        <div class="highlight-item"><i class="far fa-clock"></i> Duração: 2–3 horas</div>
+                        <div class="highlight-item"><i class="fas fa-users"></i> Cultura, gastronomia e convivência</div>
+                        <div class="highlight-item"><i class="fas fa-map-marker-alt"></i> Partida: Interior da ilha</div>
+                    </div>
+                    <div class="buttons-container">
+                        <button class="info-button">Ver Fotos</button>
+                        <button class="book-button">Reservar</button>
+                    </div>
+                </div>
+
+                <!-- Noite Cultural Cabo-Verdiana -->
+                <div class="tour-card">
+                    <h2 class="tour-title">Noite Cultural Cabo-Verdiana</h2>
+                    <div class="tour-highlights">
+                        <div class="highlight-item"><i class="fas fa-hiking"></i> Dificuldade: Fácil</div>
+                        <div class="highlight-item"><i class="far fa-clock"></i> Duração: 3 horas</div>
+                        <div class="highlight-item"><i class="fas fa-music"></i> Jantar tradicional com música e dança ao vivo</div>
+                        <div class="highlight-item"><i class="fas fa-map-marker-alt"></i> Partida: Praia</div>
+                    </div>
+                    <div class="buttons-container">
+                        <button class="info-button">Ver Fotos</button>
+                        <button class="book-button">Reservar</button>
+                    </div>
+                </div>
+            </div>
+
+            <button class="scroll-arrow right" onclick="scrollTours(1, 'tours-scroll-6')" aria-label="Avançar">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<!-- Nova seção: Experiências Culturais -->
+<div class="container">
+    <h1 class="section-title">Experiências Culturais</h1>
+    
+    <div class="tours-wrapper">
+        <div class="tours-container">
+            <button class="scroll-arrow left" onclick="scrollTours(-1, 'tours-scroll-7')" aria-label="Voltar">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <div class="tours-scroll" id="tours-scroll-7">
+                <!-- Oficina de Batuque e Funaná -->
+                <div class="tour-card">
+                    <h2 class="tour-title">Oficina de Batuque e Funaná</h2>
+                    <div class="tour-highlights">
+                        <div class="highlight-item"><i class="fas fa-hiking"></i> Dificuldade: Fácil</div>
+                        <div class="highlight-item"><i class="far fa-clock"></i> Duração: 1h30</div>
+                        <div class="highlight-item"><i class="fas fa-music"></i> Música tradicional e interação com artistas locais</div>
+                        <div class="highlight-item"><i class="fas fa-map-marker-alt"></i> Partida: Praia / Assomada</div>
+                    </div>
+                    <div class="buttons-container">
+                        <button class="info-button">Ver Fotos</button>
+                        <button class="book-button">Reservar</button>
+                    </div>
+                </div>
+
+                <!-- Workshop de Culinária Tradicional -->
+                <div class="tour-card">
+                    <h2 class="tour-title">Workshop de Culinária Tradicional</h2>
+                    <div class="tour-highlights">
+                        <div class="highlight-item"><i class="fas fa-hiking"></i> Dificuldade: Fácil</div>
+                        <div class="highlight-item"><i class="far fa-clock"></i> Duração: 2–3 horas</div>
+                        <div class="highlight-item"><i class="fas fa-utensils"></i> Preparação de cachupa, grogue e doces típicos</div>
+                        <div class="highlight-item"><i class="fas fa-map-marker-alt"></i> Partida: Praia ou interior</div>
+                    </div>
+                    <div class="buttons-container">
+                        <button class="info-button">Ver Fotos</button>
+                        <button class="book-button">Reservar</button>
+                    </div>
+                </div>
+
+                <!-- Roteiro de Arte Urbana -->
+                <div class="tour-card">
+                    <h2 class="tour-title">Roteiro de Arte Urbana</h2>
+                    <div class="tour-highlights">
+                        <div class="highlight-item"><i class="fas fa-hiking"></i> Dificuldade: Fácil</div>
+                        <div class="highlight-item"><i class="far fa-clock"></i> Duração: 1–2 horas</div>
+                        <div class="highlight-item"><i class="fas fa-paint-brush"></i> Grafites, murais e cultura de rua</div>
+                        <div class="highlight-item"><i class="fas fa-map-marker-alt"></i> Partida: Bairro da Várzea ou Achada Santo António</div>
+                    </div>
+                    <div class="buttons-container">
+                        <button class="info-button">Ver Fotos</button>
+                        <button class="book-button">Reservar</button>
+                    </div>
+                </div>
+
+                <!-- Vivência Comunitária em Aldeia Local -->
+                <div class="tour-card">
+                    <h2 class="tour-title">Vivência Comunitária em Aldeia Local</h2>
+                    <div class="tour-highlights">
+                        <div class="highlight-item"><i class="fas fa-hiking"></i> Dificuldade: Fácil</div>
+                        <div class="highlight-item"><i class="far fa-clock"></i> Duração: 3–5 horas</div>
+                        <div class="highlight-item"><i class="fas fa-users"></i> Interação com famílias, agricultura, artesanato</div>
+                        <div class="highlight-item"><i class="fas fa-map-marker-alt"></i> Partida: Interior da ilha</div>
+                    </div>
+                    <div class="buttons-container">
+                        <button class="info-button">Ver Fotos</button>
+                        <button class="book-button">Reservar</button>
+                    </div>
+                </div>
+            </div>
+
+            <button class="scroll-arrow right" onclick="scrollTours(1, 'tours-scroll-7')" aria-label="Avançar">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<!-- Nova seção: Passeios de Barco Guiados -->
+<div class="container">
+    <h1 class="section-title">Atividades Aquáticas</h1>
+    
+    <div class="tours-wrapper">
+        <div class="tours-container">
+            <button class="scroll-arrow left" onclick="scrollTours(-1, 'tours-scroll-8')" aria-label="Voltar">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <div class="tours-scroll" id="tours-scroll-8">
+                <!-- Passeio de Barco Guiado -->
+                <div class="tour-card">
+                    <h2 class="tour-title">Passeios de Barco Guiados</h2>
+                    <div class="tour-highlights">
+                        <div class="highlight-item"><i class="fas fa-hiking"></i> Duração: 2–4 horas</div>
+                        <div class="highlight-item"><i class="fas fa-water"></i> Exploração de pequenas baías e praias isoladas</div>
+                        <div class="highlight-item"><i class="fas fa-sea"></i> Observação de paisagens naturais e vida marinha</div>
+                    </div>
+                    <div class="buttons-container">
+                        <button class="info-button">Ver Fotos</button>
+                        <button class="book-button">Reservar</button>
+                    </div>
+                </div>
+
+                <!-- Snorkel Guiado -->
+                <div class="tour-card">
+                    <h2 class="tour-title">Snorkel Guiado</h2>
+                    <div class="tour-highlights">
+                        <div class="highlight-item"><i class="fas fa-hiking"></i> Duração: 1–2 horas</div>
+                        <div class="highlight-item"><i class="fas fa-fish"></i> Observação de peixes tropicais, corais e organismos marinhos</div>
+                        <div class="highlight-item"><i class="fas fa-water"></i> Águas calmas e cristalinas</div>
+                    </div>
+                    <div class="buttons-container">
+                        <button class="info-button">Ver Fotos</button>
+                        <button class="book-button">Reservar</button>
+                    </div>
+                </div>
+
+                <!-- Stand-up Paddle (SUP) Guiado -->
+                <div class="tour-card">
+                    <h2 class="tour-title">Stand-up Paddle (SUP) Guiado</h2>
+                    <div class="tour-highlights">
+                        <div class="highlight-item"><i class="fas fa-hiking"></i> Duração: 1–2 horas</div>
+                        <div class="highlight-item"><i class="fas fa-surfing"></i> Passeios ao longo da costa com paradas para observação</div>
+                        <div class="highlight-item"><i class="fas fa-water"></i> Interação com a natureza local</div>
+                    </div>
+                    <div class="buttons-container">
+                        <button class="info-button">Ver Fotos</button>
+                        <button class="book-button">Reservar</button>
+                    </div>
+                </div>
+
+                <!-- Caiaque Guiado -->
+                <div class="tour-card">
+                    <h2 class="tour-title">Caiaque Guiado</h2>
+                    <div class="tour-highlights">
+                        <div class="highlight-item"><i class="fas fa-hiking"></i> Duração: 1–2 horas</div>
+                        <div class="highlight-item"><i class="fas fa-ship"></i> Remar ao longo da costa, passando por enseadas e baías</div>
+                        <div class="highlight-item"><i class="fas fa-map-marker-alt"></i> Explicações sobre as características geográficas e ecológicas</div>
+                    </div>
+                    <div class="buttons-container">
+                        <button class="info-button">Ver Fotos</button>
+                        <button class="book-button">Reservar</button>
+                    </div>
+                </div>
+
+                <!-- Aulas de Windsurf -->
+                <div class="tour-card">
+                    <h2 class="tour-title">Aulas de Windsurf (em dias de vento)</h2>
+                    <div class="tour-highlights">
+                        <div class="highlight-item"><i class="fas fa-hiking"></i> Duração: 1–2 horas</div>
+                        <div class="highlight-item"><i class="fas fa-wind"></i> Prática de windsurf com vistas deslumbrantes</div>
+                        <div class="highlight-item"><i class="fas fa-surfing"></i> Ensino das manobras e técnicas</div>
+                    </div>
+                    <div class="buttons-container">
+                        <button class="info-button">Ver Fotos</button>
+                        <button class="book-button">Reservar</button>
+                    </div>
+                </div>
+
+                <!-- Mergulho Guiado -->
+                <div class="tour-card">
+                    <h2 class="tour-title">Mergulho Guiado (para iniciantes e experientes)</h2>
+                    <div class="tour-highlights">
+                        <div class="highlight-item"><i class="fas fa-hiking"></i> Duração: 2–3 horas</div>
+                        <div class="highlight-item"><i class="fas fa-anchor"></i> Exploração dos recifes de corais</div>
+                        <div class="highlight-item"><i class="fas fa-sea"></i> Observação da vida marinha em águas transparentes</div>
+                    </div>
+                    <div class="buttons-container">
+                        <button class="info-button">Ver Fotos</button>
+                        <button class="book-button">Reservar</button>
+                    </div>
+                </div>
+
+                <!-- Observação de Vida Marinha -->
+                <div class="tour-card">
+                    <h2 class="tour-title">Observação de Vida Marinha</h2>
+                    <div class="tour-highlights">
+                        <div class="highlight-item"><i class="fas fa-hiking"></i> Duração: 2–3 horas</div>
+                        <div class="highlight-item"><i class="fas fa-dolphin"></i> Observação de golfinhos, tartarugas e peixes</div>
+                        <div class="highlight-item"><i class="fas fa-map-marker-alt"></i> Passeios de barco ou atividades na praia</div>
+                    </div>
+                    <div class="buttons-container">
+                        <button class="info-button">Ver Fotos</button>
+                        <button class="book-button">Reservar</button>
+                    </div>
+                </div>
+
+                <!-- Natação Guiada -->
+                <div class="tour-card">
+                    <h2 class="tour-title">Natação Guiada</h2>
+                    <div class="tour-highlights">
+                        <div class="highlight-item"><i class="fas fa-hiking"></i> Duração: Flexível</div>
+                        <div class="highlight-item"><i class="fas fa-swimmer"></i> Natação em águas calmas da Praia do Tarrafal</div>
+                        <div class="highlight-item"><i class="fas fa-map-marker-alt"></i> Acompanhamento e explicações sobre o ambiente marinho</div>
+                    </div>
+                    <div class="buttons-container">
+                        <button class="info-button">Ver Fotos</button>
+                        <button class="book-button">Reservar</button>
+                    </div>
+                </div>
+
+                <!-- Passeios de Barco de Pesca Tradicional -->
+                <div class="tour-card">
+                    <h2 class="tour-title">Passeios de Barco de Pesca Tradicional</h2>
+                    <div class="tour-highlights">
+                        <div class="highlight-item"><i class="fas fa-hiking"></i> Duração: 3–4 horas</div>
+                        <div class="highlight-item"><i class="fas fa-fish"></i> Participação na pesca local e ensino das técnicas de pesca tradicionais</div>
+                        <div class="highlight-item"><i class="fas fa-map-marker-alt"></i> Observação de espécies marinhas e práticas pesqueiras</div>
+                    </div>
+                    <div class="buttons-container">
+                        <button class="info-button">Ver Fotos</button>
+                        <button class="book-button">Reservar</button>
+                    </div>
+                </div>
+            </div>
+
+            <button class="scroll-arrow right" onclick="scrollTours(1, 'tours-scroll-8')" aria-label="Avançar">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script>
+        function scrollTours(direction, elementId) {
+            const scrollContainer = document.getElementById(elementId);
+            const scrollAmount = 200; // Ajuste a quantidade de rolagem se necessário
+            scrollContainer.scrollLeft += direction * scrollAmount;
+        }
+    </script>
+
+<footer id="footer">
+    <div class="container">
+        <h2>Contato</h2>
+        <p><i class="fas fa-envelope"></i>
+            <a href="mailto:leonardonardysc@gmail.com">leonardonardysc@gmail.com</a>
+        </p>
+        <p><i class="fas fa-phone-alt"></i> (+238) 9 17 71 61
+            <!-- Link para WhatsApp ao lado do telefone -->
+            <a href="https://wa.me/+2389177161" target="_blank">
+                <i class="fab fa-whatsapp"></i> (+238) 9 34 09 75
+            </a>
+        </p>
+        <p><i class="fas fa-map-marker-alt"></i> Endereço: Vila, Tarrafal, Ilha de Santiago, Cabo Verde</p>
+
+        <div class="links">
+            <a href="#">Home</a>
+            <a href="#" id="openBlogModal">Blog</a>
+        </div>
+
+        <div class="social-icons">
+            <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+
+        <div class="rights">
+            <p>© 2025 Leonardo Nardy | Todos os direitos reservados</p>
+        </div>
+    </div>
+</footer>
+
+
+
+<!-- modal -->
+<div id="blogModalBox" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Paixão pelo Turismo</h2>
+    <p>
+      Olá, sou Leonardo Nardy, do Tarrafal, com mais de 6 anos de experiência em turismo. Trabalhei como recepcionista, agente de reservas e chefe de recepção, aprendendo a criar experiências inesquecíveis para os viajantes.
+    </p>
+    <p>
+      Essa jornada inspirou-me a abrir a minha agência, onde ofereço um atendimento personalizado e profissional. Cada roteiro é planeado com cuidado, garantindo que sua viagem seja perfeita.
+    </p>
+    <p>
+      Quer aventura, relaxamento ou cultura? Estou aqui para transformar seus sonhos em realidade.
+    </p>
+    <p>
+      ✈️ Vamos começar? Contacte-me!<br>
+      [Seus contactos/redes sociais]
+    </p>
+  </div>
+</div>
+<script>
+  const blogModal = document.getElementById("blogModalBox");
+  const openBlogBtn = document.getElementById("openBlogModal");
+  const closeBlogBtn = blogModal.querySelector(".close");
+
+  openBlogBtn.onclick = function (e) {
+    e.preventDefault();
+    blogModal.style.display = "block";
+  }
+
+  closeBlogBtn.onclick = function () {
+    blogModal.style.display = "none";
+  }
+
+  window.onclick = function (event) {
+    if (event.target == blogModal) {
+      blogModal.style.display = "none";
+    }
+  }
+</script>
+
+<!-- JavaScript para Rolagem Suave de Contato de Menu para Footer -->
+<script>
+    document.getElementById('contato-link').addEventListener('click', function(e) {
+        e.preventDefault(); // Evita o comportamento padrão do link
+        document.getElementById('footer').scrollIntoView({
+            behavior: 'smooth' // Rolagem suave
+        });
+    });
+</script>
+<!-- JavaScript para Rolagem Suave de Contato de Menu para Footer -->
+
+
+
+</body>
+</html>
