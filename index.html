@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Trilhas em Santiago - Cabo Verde</title>
+    <title>Apollo Tours - Cabo Verde</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <!-- Biblioteca de bandeiras (CSS) - fornece classes .flag-icon -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet">
     <!-- Font Awesome para ícones de globo/seta -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>  
@@ -28,18 +26,6 @@ button[onclick*="closest"]:hover {
   background: #f5f5f5 !important;
 }
 
-/* Estilos para os novos botões de modal de reservas */
-.buttons-container {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-
-
-@keyframes spin {
-  100% { transform: rotate(360deg); }
-}
 
 /* Oculta todos os botões "Ver Fotos" */
 .info-button {
@@ -759,7 +745,7 @@ body {
 
 <div style="text-align: center; margin-top: 6px; margin-bottom: -5px;">
     <h1 style="font-family: 'Montserrat', cursive; font-size: 1.6rem; color: #2c3e50; margin: 0;">
-        Kreol Expeditions
+        Apollo Tours
     </h1>
 </div>
 
@@ -2447,50 +2433,6 @@ function googleTranslateElementInit() {
   </div>
 </div>
 
-
-<!-- 
-  =============================================
-  MODAL DE RESERVA UNIVERSAL
-  =============================================
-  Janela modal para seleção do método de reserva
-  Aparece quando o usuário clica em "Reservar" em qualquer card
-  Contém três opções de contato: WhatsApp, Telefone e E-mail
--->
-<div id="reservaModal" class="modal">
-    <div class="modal-content" style="max-width: 400px;">
-        <span class="close-modal">&times;</span>
-        <h2 style="margin-bottom: 15px;">Complete sua Reserva</h2>
-        
-        <div id="passeioSelecionado" style="background: #f8f9fa; padding: 12px; border-radius: 8px; margin-bottom: 20px;"></div>
-        
-        <div style="text-align: center; margin-bottom: 20px;">
-            <p>Escolha seu método preferido:</p>
-        </div>
-        
-        <div class="icones-reserva">
-            <a href="#" id="whatsappBtn" class="icone-link" title="WhatsApp">
-                <i class="fab fa-whatsapp"></i>
-                <span style="display: block; margin-top: 5px; font-size: 12px;">WhatsApp</span>
-            </a>
-            
-            <a href="tel:+2389177161" class="icone-link" title="Ligar">
-                <i class="fas fa-phone-alt"></i>
-                <span style="display: block; margin-top: 5px; font-size: 12px;">Telefone</span>
-            </a>
-            
-            <a href="#" id="emailBtn" class="icone-link" title="E-mail">
-                <i class="fas fa-envelope"></i>
-                <span style="display: block; margin-top: 5px; font-size: 12px;">E-mail</span>
-            </a>
-        </div>
-        
-        <div style="margin-top: 25px; text-align: center; font-size: 12px; color: #666;">
-            <p>Ou nos visite em:<br>
-            <strong>Vila, Tarrafal, Ilha de Santiago, Cabo Verde</strong></p>
-        </div>
-    </div>
-</div>
-
 <!-- Formulário de reserva (inicialmente oculto) -->
 <div id="formReserva" style="display: none; margin-top: 20px;">
     <!-- Campo para selecionar a data da reserva -->
@@ -2648,8 +2590,6 @@ window.onclick = function (event) {
 }
 </script>
 
-
-// Adiciona um evento de clique para cada ícone/link de reserva
 <script>
 document.querySelectorAll('.icone-link').forEach(link => {
     link.addEventListener('click', function() {
@@ -2679,35 +2619,460 @@ document.querySelectorAll('.icone-link').forEach(link => {
 });
 </script>
 
-// Controlo para fechar o modal de reservas quando o usuario precisar
-<script>
-    <script>
-// Controle Simplificado do Modal
-document.addEventListener('DOMContentLoaded', function() {
-    // 1. Quando clicar em "Reservar Agora"
-    document.querySelectorAll('.book-button').forEach(button => {
-        button.addEventListener('click', function() {
-            document.getElementById('reservaModal').style.display = 'block';
-        });
-    });
 
-    // 2. Configuração INFALÁVEL do botão X
-    document.querySelector('#reservaModal .close').addEventListener('click', function() {
-        document.getElementById('reservaModal').style.display = 'none';
-    });
 
-    // 3. Fechar ao clicar fora do modal
-    window.addEventListener('click', function(event) {
-        if (event.target === document.getElementById('reservaModal')) {
-            event.target.style.display = 'none';
-        }
-    });
-});
-</script>
 <script>
 document.querySelector('#reservaModal span.close, #reservaModal .close-modal, #reservaModal .close').addEventListener('click', function() {
     document.getElementById('reservaModal').style.display = 'none';
 });
 </script>
+
+<!-- MODAL DE RESERVA COMPLETO - SUBSTITUA TODO O MODAL EXISTENTE POR ESTE CÓDIGO -->
+<div id="reservaModal" class="modal">
+    <div class="modal-content" style="max-width: 500px; max-height: 90vh; display: flex; flex-direction: column;">
+        <!-- Cabeçalho do Modal -->
+        <div style="padding: 15px; border-bottom: 1px solid #eee; position: relative;">
+            <h2 style="margin: 0; text-align: center;">Reservar Passeio</h2>
+            <span class="close" onclick="fecharModal()" style="position: absolute; top: 15px; right: 15px; cursor: pointer; font-size: 24px;">&times;</span>
+        </div>
+        
+        <!-- Área de Conteúdo Rolável -->
+        <div style="overflow-y: auto; padding: 20px; flex-grow: 1;">
+            <!-- Resumo do Passeio Selecionado -->
+            <div id="resumoPasseio" style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                <!-- O título do passeio será inserido aqui via JavaScript -->
+            </div>
+            
+            <!-- Formulário de Reserva -->
+            <form id="formularioReserva">
+                <!-- Seção: Dados Pessoais -->
+                <div style="margin-bottom: 20px;">
+                    <h3 style="margin-bottom: 15px; color: #2c3e50; font-size: 16px;">
+                        <i class="fas fa-user" style="margin-right: 8px;"></i> Seus Dados
+                    </h3>
+                    
+                    <div style="margin-bottom: 15px;">
+                        <label style="display: block; margin-bottom: 5px; font-weight: bold; font-size: 14px;">Nome Completo*</label>
+                        <input type="text" name="nome" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px;">
+                    </div>
+                    
+                    <div style="margin-bottom: 15px;">
+                        <label style="display: block; margin-bottom: 5px; font-weight: bold; font-size: 14px;">E-mail*</label>
+                        <input type="email" name="email" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px;">
+                    </div>
+                    
+                    <div style="margin-bottom: 15px;">
+                        <label style="display: block; margin-bottom: 5px; font-weight: bold; font-size: 14px;">Telefone/WhatsApp*</label>
+                        <input type="tel" name="telefone" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px;">
+                    </div>
+                </div>
+                
+                <!-- Seção: Detalhes da Reserva -->
+                <div style="margin-bottom: 20px;">
+                    <h3 style="margin-bottom: 15px; color: #2c3e50; font-size: 16px;">
+                        <i class="fas fa-calendar-alt" style="margin-right: 8px;"></i> Detalhes da Reserva
+                    </h3>
+                    
+                    <div style="margin-bottom: 15px;">
+                        <label style="display: block; margin-bottom: 5px; font-weight: bold; font-size: 14px;">Data da Atividade*</label>
+                        <input type="date" name="data" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px;">
+                    </div>
+                    
+                    <div style="margin-bottom: 15px;">
+                        <label style="display: block; margin-bottom: 5px; font-weight: bold; font-size: 14px;">Número de Pessoas*</label>
+                        <input type="number" name="pessoas" min="1" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px;">
+                    </div>
+                    
+                    <div style="margin-bottom: 15px;">
+                        <label style="display: block; margin-bottom: 5px; font-weight: bold; font-size: 14px;">Forma de Pagamento*</label>
+                        <select name="pagamento" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px;">
+                            <option value="">Selecione...</option>
+                            <option value="dinheiro">Dinheiro</option>
+                            <option value="mbway">MB Way</option>
+                            <option value="transferencia">Transferência Bancária</option>
+                            <option value="cartao">Cartão no Local</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Seção: Observações -->
+                <div style="margin-bottom: 25px;">
+                    <h3 style="margin-bottom: 15px; color: #2c3e50; font-size: 16px;">
+                        <i class="fas fa-edit" style="margin-right: 8px;"></i> Observações
+                    </h3>
+                    
+                    <div>
+                        <label style="display: block; margin-bottom: 5px; font-weight: bold; font-size: 14px;">Requisitos Especiais ou Observações</label>
+                        <textarea name="observacoes" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; height: 100px; font-size: 14px;"></textarea>
+                    </div>
+                </div>
+                
+                <!-- Botão de Envio -->
+                <button type="submit" style="background: #e74c3c; color: white; border: none; padding: 12px; border-radius: 4px; width: 100%; cursor: pointer; font-weight: bold; font-size: 16px;">
+                    <i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Enviar Reserva
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+/* =============================================
+   ESTILOS DO MODAL DE RESERVA - ADICIONE AO SEU CSS EXISTENTE
+   ============================================= */
+
+/* Efeito de abertura suave do modal */
+#reservaModal .modal-content {
+    animation: modalFadeIn 0.3s ease-out;
+    transform-origin: center top;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Configurações de scroll para o conteúdo do modal */
+#reservaModal .modal-content > div {
+    scrollbar-width: thin;
+    scrollbar-color: #e74c3c #f5f5f5;
+}
+
+/* Personalização da barra de scroll para navegadores WebKit */
+#reservaModal .modal-content > div::-webkit-scrollbar {
+    width: 6px;
+}
+
+#reservaModal .modal-content > div::-webkit-scrollbar-track {
+    background: #f5f5f5;
+    border-radius: 3px;
+}
+
+#reservaModal .modal-content > div::-webkit-scrollbar-thumb {
+    background-color: #e74c3c;
+    border-radius: 3px;
+}
+
+/* Estilização dos campos do formulário */
+#reservaModal input,
+#reservaModal select,
+#reservaModal textarea {
+    transition: all 0.3s;
+    border: 1px solid #ddd !important;
+}
+
+#reservaModal input:focus,
+#reservaModal select:focus,
+#reservaModal textarea:focus {
+    border-color: #e74c3c !important;
+    box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.2);
+    outline: none;
+}
+
+/* Botão de envio com efeito hover */
+#reservaModal button[type="submit"] {
+    transition: all 0.3s;
+}
+
+#reservaModal button[type="submit"]:hover {
+    background: #c0392b !important;
+    transform: translateY(-2px);
+}
+</style>
+
+<script>
+/* =============================================
+   CONTROLE DO MODAL DE RESERVA - ADICIONE AO SEU JAVASCRIPT
+   ============================================= */
+
+/**
+ * Abre o modal de reserva com o passeio selecionado
+ * @param {string} tituloPasseio - Título do passeio que será reservado
+ */
+function abrirModalReserva(tituloPasseio) {
+    const modal = document.getElementById('reservaModal');
+    const resumo = document.getElementById('resumoPasseio');
+    
+    // Insere o título do passeio no cabeçalho do modal
+    resumo.innerHTML = `
+        <h3 style="margin: 0 0 5px 0; color: #e74c3c;">${tituloPasseio}</h3>
+        <p style="margin: 0; font-size: 14px; color: #555;">
+            <i class="fas fa-info-circle"></i> Preencha todos os campos para confirmar sua reserva
+        </p>
+    `;
+    
+    // Mostra o modal
+    modal.style.display = 'block';
+    
+    // Rola para o topo do modal (útil caso o modal seja reaberto)
+    modal.querySelector('.modal-content').scrollTop = 0;
+}
+
+/**
+ * Fecha o modal de reserva e reseta o formulário
+ */
+function fecharModal() {
+    const modal = document.getElementById('reservaModal');
+    modal.style.display = 'none';
+    document.getElementById('formularioReserva').reset();
+}
+
+// Adiciona evento de clique a todos os botões "Reservar Agora"
+document.querySelectorAll('.book-button').forEach(button => {
+    button.addEventListener('click', function() {
+        // Obtém o título do passeio do card clicado
+        const card = this.closest('.tour-card');
+        const titulo = card.querySelector('.tour-title').textContent;
+        
+        // Abre o modal com o título do passeio
+        abrirModalReserva(titulo);
+    });
+});
+
+// Fecha o modal ao clicar fora do conteúdo
+window.addEventListener('click', function(event) {
+    const modal = document.getElementById('reservaModal');
+    if (event.target === modal) {
+        fecharModal();
+    }
+});
+
+// Processa o formulário quando enviado
+document.getElementById('formularioReserva').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Coleta todos os dados do formulário
+    const formData = new FormData(this);
+    const dadosReserva = {};
+    formData.forEach((value, key) => {
+        dadosReserva[key] = value;
+    });
+    
+    // Obtém o título do passeio
+    const tituloPasseio = document.querySelector('#resumoPasseio h3').textContent;
+    
+    // Formata a mensagem para envio
+    let mensagem = `📌 *NOVA RESERVA* - ${tituloPasseio}\n\n`;
+    mensagem += `👤 *Cliente:* ${dadosReserva.nome}\n`;
+    mensagem += `📧 *E-mail:* ${dadosReserva.email}\n`;
+    mensagem += `📱 *Telefone:* ${dadosReserva.telefone}\n\n`;
+    mensagem += `📅 *Data:* ${dadosReserva.data}\n`;
+    mensagem += `👥 *Pessoas:* ${dadosReserva.pessoas}\n`;
+    mensagem += `💳 *Pagamento:* ${dadosReserva.pagamento}\n\n`;
+    mensagem += `📝 *Observações:* ${dadosReserva.observacoes || 'Nenhuma'}`;
+    
+    // Codifica a mensagem para URL (para envio por WhatsApp)
+    const mensagemCodificada = encodeURIComponent(mensagem);
+    
+    // Abre o WhatsApp com a mensagem pré-preenchida
+    window.open(`https://wa.me/+2389177161?text=${mensagemCodificada}`, '_blank');
+    
+    // Feedback visual para o usuário
+    alert('Reserva enviada com sucesso! Entraremos em contato para confirmação.');
+    
+    // Fecha o modal
+    fecharModal();
+});
+</script>
+
+
+<!-- 
+  =============================================
+  MODAL DE RESERVA - COM OPÇÕES DE CONFIRMAÇÃO
+  =============================================
+  Este modal tem duas etapas:
+  1. Formulário de reserva normal
+  2. Opções de como receber a confirmação (aparece após enviar)
+-->
+<div id="reservaModal" class="modal">
+  <div class="modal-content">
+    <!-- Botão de fechar o modal (X no canto superior direito) -->
+    <span class="close" onclick="fecharModal()">&times;</span>
+    
+    <!-- Título principal do modal -->
+    <h2>Reservar Passeio</h2>
+    
+    <!-- Área que mostra o resumo do passeio selecionado -->
+    <div id="resumoPasseio"></div>
+    
+    <!-- Formulário principal de reserva -->
+    <form id="formularioReserva">
+      <!-- Todos os campos do formulário ficariam aqui -->
+      <!-- ... -->
+      
+      <!-- ===== ETAPA 1: BOTÃO DE ENVIO NORMAL ===== -->
+      <div id="etapaEnvio">
+        <button type="submit" class="btn-enviar">
+          <i class="fas fa-paper-plane"></i> Enviar Reserva
+        </button>
+      </div>
+      
+      <!-- ===== ETAPA 2: OPÇÕES DE CONFIRMAÇÃO ===== --> 
+      <!-- (Inicialmente escondida, aparece após clicar em Enviar Reserva) -->
+      <div id="etapaConfirmacao" style="display:none; text-align:center;">
+        <h3><i class="fas fa-envelope"></i> Como deseja receber a confirmação?</h3>
+        
+        <!-- Opção 1: WhatsApp -->
+        <button onclick="enviarPorWhatsApp()" class="btn-whatsapp">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </button>
+        
+        <!-- Opção 2: E-mail -->
+        <button onclick="enviarPorEmail()" class="btn-email">
+          <i class="fas fa-envelope"></i> E-mail
+        </button>
+        
+        <!-- Opção 3: SMS -->
+        <button onclick="enviarPorSMS()" class="btn-sms">
+          <i class="fas fa-sms"></i> SMS
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+// =============================================
+// CONTROLE DO FLUXO DE ENVIO
+// =============================================
+
+/**
+ * Evento quando o formulário é submetido (clicar em Enviar Reserva)
+ * Impede o envio tradicional e mostra as opções de confirmação
+ */
+document.getElementById('formularioReserva').addEventListener('submit', function(e) {
+  e.preventDefault(); // Impede o envio normal do formulário
+  
+  // Esconde o botão de envio e mostra as opções de confirmação
+  document.getElementById('etapaEnvio').style.display = 'none';
+  document.getElementById('etapaConfirmacao').style.display = 'block';
+});
+
+// =============================================
+// FUNÇÕES PARA CADA MÉTODO DE CONFIRMAÇÃO
+// =============================================
+
+/**
+ * Envia confirmação por WhatsApp
+ * Abre o WhatsApp com mensagem pré-formatada
+ */
+function enviarPorWhatsApp() {
+  const dados = coletarDadosFormulario(); // Pega dados do formulário
+  const mensagem = formatarMensagem(dados); // Formata a mensagem
+  // Abre o WhatsApp com número pré-definido e mensagem codificada
+  window.open(`https://wa.me/+2389177161?text=${encodeURIComponent(mensagem)}`, '_blank');
+  finalizarProcesso(); // Fecha o modal e limpa o formulário
+}
+
+/**
+ * Envia confirmação por E-mail
+ * Abre o cliente de e-mail padrão
+ */
+function enviarPorEmail() {
+  const dados = coletarDadosFormulario();
+  const mensagem = formatarMensagem(dados);
+  // Abre o cliente de e-mail com assunto e corpo pré-preenchidos
+  window.open(`mailto:leonardonardysc@gmail.com?subject=Reserva&body=${encodeURIComponent(mensagem)}`, '_blank');
+  finalizarProcesso();
+}
+
+/**
+ * Envia confirmação por SMS
+ * Abre o aplicativo de mensagens do dispositivo
+ */
+function enviarPorSMS() {
+  const dados = coletarDadosFormulario();
+  const mensagem = formatarMensagem(dados);
+  // Remove caracteres não numéricos do telefone
+  const numeroTel = dados.telefone.replace(/\D/g,'');
+  // Abre o app de SMS com número e mensagem pré-preenchidos
+  window.open(`sms:${numeroTel}?body=${encodeURIComponent(mensagem)}`, '_blank');
+  finalizarProcesso();
+}
+
+// =============================================
+// FUNÇÕES AUXILIARES
+// =============================================
+
+/**
+ * Coleta todos os dados do formulário e retorna como objeto
+ */
+function coletarDadosFormulario() {
+  const formData = new FormData(document.getElementById('formularioReserva'));
+  return Object.fromEntries(formData.entries());
+}
+
+/**
+ * Formata a mensagem de confirmação padrão
+ */
+function formatarMensagem(dados) {
+  return `Nova Reserva:\n\nNome: ${dados.nome}\nTelefone: ${dados.telefone}\nData: ${dados.data}\nPessoas: ${dados.pessoas}\n\nObservações: ${dados.observacoes || 'Nenhuma'}`;
+}
+
+/**
+ * Fecha o modal e reseta o formulário
+ */
+function finalizarProcesso() {
+  alert('Confirmação enviada com sucesso!');
+  document.getElementById('reservaModal').style.display = 'none';
+  document.getElementById('formularioReserva').reset();
+  
+  // Volta para a etapa inicial (caso o modal seja reaberto)
+  document.getElementById('etapaEnvio').style.display = 'block';
+  document.getElementById('etapaConfirmacao').style.display = 'none';
+}
+
+/**
+ * Fecha o modal
+ */
+function fecharModal() {
+  document.getElementById('reservaModal').style.display = 'none';
+}
+</script>
+
+<style>
+/* =============================================
+   ESTILOS DOS BOTÕES
+   ============================================= */
+
+/* Botão principal de envio */
+.btn-enviar {
+  background: #e74c3c; /* Vermelho */
+  color: white;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+/* Botão do WhatsApp */
+.btn-whatsapp { 
+  background: #25D366; /* Verde do WhatsApp */
+  color: white; 
+}
+
+/* Botão de E-mail */
+.btn-email { 
+  background: #3498db; /* Azul */
+  color: white; 
+}
+
+/* Botão de SMS */
+.btn-sms { 
+  background: #2ecc71; /* Verde claro */
+  color: white; 
+}
+
+/* Estilos comuns para todos os botões de confirmação */
+.btn-whatsapp, .btn-email, .btn-sms {
+  padding: 12px;
+  width: 100%;
+  margin: 5px 0;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+</style>
+
 </body>
 </html>
